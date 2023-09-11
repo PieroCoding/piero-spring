@@ -23,6 +23,8 @@ public class CglibSubclassingInstantiationStrategy implements InstantiationStrat
         if (constructor == null) {
             return enhancer.create();
         }
-        return enhancer.create(constructor.getParameterTypes(), args);
+
+        Object o = enhancer.create(constructor.getParameterTypes(), args);
+        return o;
     }
 }
